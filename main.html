@@ -1,16 +1,161 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Complex Table and Flexbox Gallery</title>
+  <style>
+    /* Table Styling */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid orange;
+      text-align: center;
+      padding: 3px 5px;
+    }
+    th {
+      background-color: #888888;
+      color: white;
+    }
+    .sub-total-text {
+      text-align: right;
+    }
 
+    /* Flexbox Gallery */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      flex-grow: 1;
+    }
+    .gallery-item {
+      flex: 1 1 calc(33.333% - 10px); /* Adjust images to fit row */
+      box-sizing: border-box;
+    }
+    @media (max-width: 768px) {
+      .gallery-item {
+        flex: 1 1 calc(50% - 10px); /* Adjust for smaller screens */
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery-item {
+        flex: 1 1 100%; /* Stacks items vertically on small screens */
+      }
+    }
+  </style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <!-- Complex Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Firm</th>
+        <th>Org</th>
+        <th>Lob</th>
+        <th>Sub Lob</th>
+        <th>Business Plans</th>
+        <th>Business Components</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="11">XYZ</td>
+        <td rowspan="5">CST</td>
+        <td rowspan="3">CT</td>
+        <td>ADS</td>
+        <td>1</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>ADS</td>
+        <td>2</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>ADS</td>
+        <td>3</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td rowspan="2">IT</td>
+        <td>DEV</td>
+        <td>2</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>QA</td>
+        <td>1</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td class="sub-total-text" colspan="3">Sub Total</td>
+        <td>6</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td rowspan="6">DST</td>
+        <td rowspan="4">RD</td>
+        <td>AI</td>
+        <td>2</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>ML</td>
+        <td>4</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>DL</td>
+        <td>5</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>WEB</td>
+        <td>3</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Marketing</td>
+        <td>SEO</td>
+        <td>4</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>SMM</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Flexbox Gallery -->
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/150" alt="Sample Image 1">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/200" alt="Sample Image 2">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/250" alt="Sample Image 3">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/300" alt="Sample Image 4">
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/350" alt="Sample Image 5">
+    </div>
+  </div>
 
 </body>
-
 </html>
+
